@@ -1,3 +1,23 @@
 .jumbotron {
+    color: black;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h5 {
+    font-style: oblique;
+}
+
+#myMenu {
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-temp {
+    border: 10px;
     color: black;
+    font-size: large;
+}
+
+#mySearch {
+    font-style: oblique;
 }
