@@ -1,9 +1,7 @@
 let displayWeather = $(".weather-temp");
 
-
-
 function searchWeather () {
-    let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=New york&appid=121dbfe48a774b52280de2af5c07925e"
+    let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Hartford&appid=121dbfe48a774b52280de2af5c07925e"
     $.ajax({
         type: "GET",
         url: queryUrl

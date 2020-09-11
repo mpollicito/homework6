@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css" />    
+
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,15 +14,26 @@
 <body>
     <div class="jumbotron">
         <h1>Weather Dashboard</h1>
-        <h3>API Power!</h3>
+        <h5>API Powered</h5>
     </div>
 
-    <div class="container" id="city-search">Search for a City:
+    <!-- <div class="container" id="city-search">Search for a City:
         <input>
-    </div>
-    
+    </div> -->
+
     <div class="weather-temp">
-        
+        <input type="text" id="mySearch" onkeyup="searchWeather()" placeholder="Search.." title="Search for a City">
+
+        <ul id="myMenu">
+            <li><a href="#">Hartford</a></li>
+            <li><a href="#">New Britain</a></li>
+            <li><a href="#">Farmington</a></li>
+            <li><a href="#">Bristol</a></li>
+            <li><a href="#">Bloomfield</a></li>
+            <li><a href="#">West Hartford</a></li>
+            <li><a href="#">Manchester</a></li>
+            <li><a href="#">Plainville</a></li>
+        </ul>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
