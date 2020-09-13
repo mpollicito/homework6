@@ -1,6 +1,7 @@
 .jumbotron {
     color: black;    
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: content-box;
 }
 
 h5 {
@@ -8,7 +9,6 @@ h5 {
 }
 
 #myMenu {
-    color: orangered;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -20,4 +20,9 @@ h5 {
 
 #mySearch {
     font-style: oblique;
+}
+
+.myButton {
+    border: 5px, round;
+    font: bold;
 }
