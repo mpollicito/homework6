@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
     let displayWeather = $(".weather-temp");
+    let apiKey = "appid=121dbfe48a774b52280de2af5c07925e"
 
     function searchWeather() {
-        let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Hartford&appid=121dbfe48a774b52280de2af5c07925e"
+        let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Hartford&" + apiKey
         $.ajax({
             type: "GET",
             url: queryUrl
@@ -17,7 +18,7 @@ $(document).ready(function () {
                 displayWeather.append(temp + "<br>", humidity + "<br>", windSpeed + "<br>");
             })
 
-        let uvindexUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=121dbfe48a774b52280de2af5c07925e&lat=41.77&lon=-72.77"
+        let uvindexUrl = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "&lat=41.77&lon=-72.77"
         $.ajax({
             type: "GET",
             url: uvindexUrl
@@ -31,7 +32,6 @@ $(document).ready(function () {
     }
 
     searchWeather();
-
 
     let convertKelvin = (kelvin) => {
         return parseInt(((((kelvin) - 273.15) * 1.8) + 32));
