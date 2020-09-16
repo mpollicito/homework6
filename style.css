@@ -1,5 +1,12 @@
 .jumbotron {
   font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.7;
+}
+
+body {
+  background-image: url("https://wallpapercave.com/wp/tAXPmkI.jpg");
+  opacity: 1;
+  color: white;
 }
 
 li,
@@ -19,22 +26,35 @@ p {
 
 #myMenu {
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 .weather-temp {
   border: 10px;
-  color: black;
+  color: white;
   font-size: large;
 }
 
 #mySearch {
   font-style: oblique;
+  color: white;
 }
 
 .myButton {
-  border: 5px, round;
+  border: 5px, rounded;
   font: bold;
 }
+
+.float-left,
+.float-right,
+.float-none {
+  color: white;
+}
+
+/* i {
+  color: white;
+  background-color: gray;
+} */
 
 @media screen and (max-width: 576px) {
   .navbar-brand {

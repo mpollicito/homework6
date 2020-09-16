@@ -1,8 +1,8 @@
+let searchButton = $("btn btn-info")
+let displayWeather = $(".weather-temp");
+let apiKey = "appid=121dbfe48a774b52280de2af5c07925e"
+
 $(document).ready(function () {
-
-    let displayWeather = $(".weather-temp");
-    let apiKey = "appid=121dbfe48a774b52280de2af5c07925e"
-
     function searchWeather() {
         let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Hartford&" + apiKey
         $.ajax({
@@ -29,12 +29,41 @@ $(document).ready(function () {
 
                 displayWeather.append(uvIndex);
             })
+
+        let convertKelvin = (kelvin) => {
+            return parseInt(((((kelvin) - 273.15) * 1.8) + 32));
+        }
     }
 
     searchWeather();
-
-    let convertKelvin = (kelvin) => {
-        return parseInt(((((kelvin) - 273.15) * 1.8) + 32));
-    }
-
 });
+
+    // Disabled for review/implementation
+
+    // for (var i = "#"; i++) {
+    //     var conditionFavorable = ;
+    //     var conditionModerate = ;
+    //     var conditionSevere = ;
+
+    //     if (conditionFavorable === true) {
+    //         $("#" + i + "button").addClass("favorable");
+    //     } else if (conditionModerate === true) {
+    //         $("#" + i + "button").addClass("moderate");
+    //     } else (conditionSevere === true) {
+    //         $("#" + i + "button").addClass("severe");
+    //     }
+    // }
+    // searchButton.on("click", function () {
+    //     var searchDay = $(input).attr("data-day");
+    //     var input = $("#");
+    //     localStorage.setItem(searchDay, input);
+    // });
+
+    // localStorage.getItem()
+    // localStorage.setItem(searchDay, input)
+    // localStorage.clear()
+
+        // let convertKelvin = (kelvin) => {
+    //     return parseInt(((((kelvin) - 273.15) * 1.8) + 32));
+    // }
+
