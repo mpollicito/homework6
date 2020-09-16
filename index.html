@@ -13,21 +13,47 @@
 
 <body>
     <div class="jumbotron">
-        <h1>Weather Dashboard</h1>
-        <h5>API Powered</h5>
+        <div class="container">
+            <h1 class="display-4">Weather // Dashboard</h1>
+            <p class="lead">Quickly find YOUR weather!</p>
+        </div>
     </div>
 
-    <div>Search Here</div>
-
     <div class="weather-temp">
-        <input type="text" id="mySearch" onkeyup="searchWeather()" placeholder="Enter a City..." title="Search for a City">
+        <input type="text" id="mySearch" onkeyup="searchWeather()" placeholder="Enter a City..."
+            title="Search for a City">
 
-        <button type="button" class="btn btn-primary">Search</button>
-        
-        <ul id="myMenu">
-            <br>
-            <p class="text-info">Search History</p>
+        <button type="button" class="btn btn-info">Search</button>
+
+        <ul class="list-group">
+            <p>Search History</p>
+            <li class="list-group-item">Search 1</li>
+            <li class="list-group-item">Search 2</li>
+            <li class="list-group-item">Search 3</li>
+            <li class="list-group-item">Search 4</li>
+            <li class="list-group-item">Search 5</li>
         </ul>
+    </div>
+
+    <div class="container">
+        <p>5-Day Forecast</p>
+        <div class="row">
+            <div class="col">
+                Day 1
+            </div>
+            <div class="col">
+                Day 2
+            </div>
+            <div class="col">
+                Day 3
+            </div>
+            <div class="col">
+                Day 4
+            </div>
+            <div class="col">
+                Day 5
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
