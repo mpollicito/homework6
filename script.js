@@ -1,10 +1,15 @@
-let searchButton = $("btn btn-info")
-let displayWeather = $(".weather-temp");
-let apiKey = "appid=121dbfe48a774b52280de2af5c07925e"
-
 $(document).ready(function () {
+    let searchButton = $("#search-btn");
+    let displayWeather = $(".weather-temp");
+    let apiKey = "appid=121dbfe48a774b52280de2af5c07925e"
+
+    searchButton.on("click", searchWeather);
+
     function searchWeather() {
-        let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Hartford&" + apiKey
+        city = $("#mySearch").val();
+        save(city);
+        console.log(city);
+        let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&" + apiKey
         $.ajax({
             type: "GET",
             url: queryUrl
@@ -16,9 +21,10 @@ $(document).ready(function () {
                 let windSpeed = "Wind Speed: " + response.wind.speed + " mph";
 
                 displayWeather.append(temp + "<br>", humidity + "<br>", windSpeed + "<br>");
-            })
 
-        let uvindexUrl = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "&lat=41.77&lon=-72.77"
+        let lat = response.coord.lat; 
+        let lon = response.coord.lon;
+        let uvindexUrl = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "&lat=" + lat + "&lon=" + lon
         $.ajax({
             type: "GET",
             url: uvindexUrl
@@ -29,13 +35,31 @@ $(document).ready(function () {
 
                 displayWeather.append(uvIndex);
             })
-
+        })
         let convertKelvin = (kelvin) => {
             return parseInt(((((kelvin) - 273.15) * 1.8) + 32));
         }
     }
 
-    searchWeather();
+    function save(data) {
+        let currentData = JSON.parse(localStorage.getItem("savedCities")) || []
+        currentData.push(data);
+        localStorage.setItem("savedCities", JSON.stringify(currentData))
+    }
+
+    function showSearches () {
+        let currentData = JSON.parse(localStorage.getItem("savedCities")) || []
+        let ul = $("#search-history");
+
+        for (let i = 0; i < currentData.length; i++) {
+            console.log(currentData[i]);
+            let li = $("li");
+            li.text(currentData[i]);
+            ul.append(li);
+        }
+    }
+
+    showSearches ();
 });
 
     // Disabled for review/implementation
