@@ -7,16 +7,21 @@ Icons are used to depict the displayed weather (For example, hot days will have 
 
 ## Programs/tools/links
 Visual Studio Code
+
 Google Chrome
+
 Git Bash
 
-https://fontawesome.com/icons?d=gallery&c=weather,
+https://fontawesome.com/icons?d=gallery&c=weather
+
 https://www.w3schools.com/html/html_css.asp
 
 APIs:
 
-https://openweathermap.org/api,
-https://openweathermap.org/forecast5,
+https://openweathermap.org/api
+
+https://openweathermap.org/forecast5
+
 https://openweathermap.org/current
 
 Deployed App:
